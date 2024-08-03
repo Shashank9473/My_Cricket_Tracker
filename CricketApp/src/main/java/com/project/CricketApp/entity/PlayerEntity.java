@@ -26,4 +26,50 @@ public class PlayerEntity {
 	private String email;
 	private String playerType;
 	
+	
+	
+	public PlayerEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public PlayerEntity(String playerName, String mobile, String email, String playerType) {
+		super();
+		this.playerName = playerName;
+		this.mobile = mobile;
+		this.email = email;
+		this.playerType = playerType;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getPlayerName() {
+		return playerName;
+	}
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPlayerType() {
+		return playerType;
+	}
+	public void setPlayerType(String playerType) {
+		this.playerType = playerType;
+	}
+	
 }

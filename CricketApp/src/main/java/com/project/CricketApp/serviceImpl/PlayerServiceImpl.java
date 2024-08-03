@@ -1,11 +1,13 @@
 package com.project.CricketApp.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.project.CricketApp.entity.PlayerEntity;
+import com.project.CricketApp.exceptions.PlayerNotFoundException;
 import com.project.CricketApp.repository.PlayerRepo;
 import com.project.CricketApp.service.PlayerService;
 
@@ -18,7 +20,8 @@ public class PlayerServiceImpl implements PlayerService{
 	@Override
 	public PlayerEntity addPlayer(PlayerEntity player) {
 		// TODO Auto-generated method stub
-			repo.save(player);
+		player.setPlayerName(player.getPlayerName().toLowerCase());
+		repo.save(player);
 		return player;
 	}
 
@@ -26,6 +29,16 @@ public class PlayerServiceImpl implements PlayerService{
 	public List<PlayerEntity> getPlayersList() {
 		// TODO Auto-generated method stub
 		return repo.findAll();
+	}
+
+	@Override
+	public List<PlayerEntity> getPlayerByName(String playerName) {
+		// TODO Auto-generated method stub
+		List<PlayerEntity> player = repo.findByPlayerName(playerName.toLowerCase());
+		if( player.isEmpty())
+			throw new PlayerNotFoundException("Player Not Found");
+		else
+			return player;
 	}
 
 }

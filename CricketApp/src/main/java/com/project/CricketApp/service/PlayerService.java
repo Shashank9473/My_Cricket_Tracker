@@ -12,5 +12,7 @@ public interface PlayerService {
 	public PlayerEntity addPlayer(PlayerEntity player);
 	
 	public List<PlayerEntity> getPlayersList();
+	
+	public List<PlayerEntity> getPlayerByName(String playerName);
 
 }
