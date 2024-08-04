@@ -24,9 +24,7 @@ public class PlayerEntity {
 	private String playerName;
 	private String mobile;
 	private String email;
-	private String playerType;
-	
-	
+	private String playerType;	
 	
 	public PlayerEntity() {
 		super();

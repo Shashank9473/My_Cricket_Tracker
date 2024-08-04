@@ -1,11 +1,9 @@
 package com.project.CricketApp.serviceImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import com.project.CricketApp.entity.PlayerEntity;
 import com.project.CricketApp.exceptions.PlayerNotFoundException;
 import com.project.CricketApp.repository.PlayerRepo;
